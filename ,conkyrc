@@ -1,0 +1,49 @@
+conky.config = {
+	alignment 		= 'middle_right',
+	background 		= true,
+	color2 			= '#000000',
+	color3 			= '#16A085',
+	color4			= '#0d0d0d',
+	cpu_avg_samples 	= 2,
+	default_color 		= '#131313',
+	draw_shades 		= false,
+	default_shade_color 	= '#2d2d2d',
+	double_buffer 		= true,
+	font 			= 'Monospace:size=8',
+	gap_x 			= 10,
+	gap_y 			= 150,
+	minimum_width 		= 200,
+	maximum_width 		= 200,
+	no_buffers 		= true,
+	own_window 		= true,
+	own_window_type 	= 'override',
+	own_window_transparent 	= true,
+        own_window_hints 	= 'undecorated,below,sticky,skip_taskbar,skip_pager',
+	update_interval 	= 2.0,
+	use_xft			= true,
+}
+
+conky.text = [[
+${voffset 10}${goto 5}${font monospace:size=18}${time %a}$font${voffset -20}$alignr${color #16A085}${font monospace:size=45}${time %e}$font${color}
+${voffset -20}${goto 5}${font monospace:size=18}${time %b}$font ${voffset 2}${font monospace:size=20}${time %Y}$font
+#
+${voffset 10}${color3}CPU$alignr$color3$cpu%$color
+#${cpubar 3,200}
+$color4${top name 1}$alignr${top cpu 1}%$color
+$color4${top name 2}$alignr${top cpu 2}%$color
+$color4${top name 3}$alignr${top cpu 3}%$color
+$color4${top name 4}$alignr${top cpu 4}%$color
+$color4${top name 5}$alignr${top cpu 5}%$color
+#
+${voffset 10}${color3}RAM$alignr$color3$mem/$memmax$color
+#${membar 3,200}
+$color4${top_mem name 1}$alignr${top_mem mem_res 1}$color
+$color4${top_mem name 2}$alignr${top_mem mem_res 2}$color
+$color4${top_mem name 3}$alignr${top_mem mem_res 3}$color
+$color4${top_mem name 4}$alignr${top_mem mem_res 4}$color
+$color4${top_mem name 5}$alignr${top_mem mem_res 5}$color
+#
+${voffset 10}${color3}SWAP$alignr$color3$swap/$swapmax$color
+#${swapbar 3,200}
+#
+]]
