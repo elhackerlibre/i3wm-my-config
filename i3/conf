@@ -1,0 +1,438 @@
+#      	  '####::'#######::'##:::::'##:'##::::'##:
+#	  . ##::'##.... ##: ##:'##: ##: ###::'###:
+#	  : ##::..::::: ##: ##: ##: ##: ####'####:
+#	  : ##:::'#######:: ##: ##: ##: ## ### ##:
+#	  : ##:::...... ##: ##: ##: ##: ##. #: ##:
+#	  : ##::'##:::: ##: ##: ##: ##: ##:.:: ##:
+#	  '####:. #######::. ###. ###:: ##:::: ##:
+#	  ....:::.......::::...::...:::..:::::..::
+
+	    ############# i3 TWM ###############
+	    #                                  #
+	    # Mi configuración de i3 TWM       #
+	    # Autor: Felix Molero              #
+	    # Alias: Viru69                    #
+	    # Email: elhackerliber@gmail.com   #
+	    # Lic:  GPL v2                     #
+	    #                                  #
+       	    ############# i3 TWM ###############
+
+
+#::::::::::::::::: Tecla window por default::::::::::::::::::::#
+set $mod Mod4
+
+# Fuente por dafault para ventanas y barra
+font pango:Monospace 9
+
+# Modo del Mouse para ventanas flotantes
+floating_modifier $mod
+
+#### Comandos default ####
+
+# Iniciar una terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec termite
+
+# Salir de la ventana enfocada
+bindsym $mod+Shift+q kill
+
+# Llamar dmenu (menu)
+#bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -b -nb '#303030' -sb '#101010' -sf '#16a085' -fn 'Terminus-11' -l 10"
+##Font: Ubuntu Mono
+################################################################
+
+#:::::::::::::::::::::: Config default ::::::::::::::::::::::::#
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+ntilde focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+ntilde move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# customize workspace name
+set $WS1   
+set $WS2   
+set $WS3   
+set $WS4   
+set $WS5   
+set $WS6   
+set $WS7   
+set $WS8   
+set $WS9   
+set $WS0   
+
+# switch to workspace
+bindsym $mod+1 workspace $WS1
+bindsym $mod+2 workspace $WS2
+bindsym $mod+3 workspace $WS3
+bindsym $mod+4 workspace $WS4
+bindsym $mod+5 workspace $WS5
+bindsym $mod+6 workspace $WS6
+bindsym $mod+7 workspace $WS7
+bindsym $mod+8 workspace $WS8
+bindsym $mod+9 workspace $WS9
+bindsym $mod+0 workspace $WS0
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $WS1
+bindsym $mod+Shift+2 move container to workspace $WS2
+bindsym $mod+Shift+3 move container to workspace $WS3
+bindsym $mod+Shift+4 move container to workspace $WS4
+bindsym $mod+Shift+5 move container to workspace $WS5
+bindsym $mod+Shift+6 move container to workspace $WS6
+bindsym $mod+Shift+7 move container to workspace $WS7
+bindsym $mod+Shift+8 move container to workspace $WS8
+bindsym $mod+Shift+9 move container to workspace $WS9
+bindsym $mod+Shift+0 move container to workspace $WS0
+
+#::::::::: Asignando programas a espacio de trabajo :::::::::::#
+################################################################
+assign [class="chromium"] 	$ws1
+assign [class="Pale moon"]	$ws1
+assign [class="Thunar"] 	$ws2
+assign [class="Mousepad"] 	$ws3
+assign [class="Vlc"] 		$ws4
+assign [class="mplayer"] 	$ws4
+#assign [class="Terminator"] 	$ws4
+assign [class="Popcorn-Time"] 	$ws4
+assign [class="Termite"] 	$ws5
+assign [class="Franz"]		$ws6
+assign [class="Gimp"]		$ws7
+assign [class="Inkscape"]	$ws7
+assign [class="Gnumeric"]	$ws7
+assign [class="libreoffice"]	$ws7
+assign [class="Transmission"]	$ws8
+assign [class="JDownloader"]	$ws8
+assign [class="Lxappearance"]	$ws9
+assign [class=Pavucontrol]	$ws9
+assign [class="minecraft"]	$ws0
+################################################################
+
+#:::::: Programas que se inician en espacios de trabajo :::::::#
+################################################################
+#exec --no-startup-id i3-msg 'workspace 1 : ; exec chromium'
+#exec --no-startup-id i3-msg 'workspace 2 : ; exec thunar'
+#exec --no-startup-id i3-msg 'workspace 3 : ; exec mousepad'
+#exec --no-startup-id i3-msg 'workspace 4 : ; exec terminator -e mocp'
+#exec --no-startup-id i3-msg 'workspace 5 : ; exec terminator'
+################################################################
+
+#:::::::::::::::: Config de estilo de bordes ::::::::::::::::::#
+################################################################
+# <normal|1pixel|pixel xx|none|pixel> #
+new_window pixel 1
+new_float normal
+################################################################
+
+#:::::::::::: Desactivar los bordes de ventanas :::::::::::::::#
+################################################################
+hide_edge_borders none
+################################################################
+
+#::::::::::::::::: Ventanas modo flotante :::::::::::::::::::::#
+################################################################
+#|||||||||||||| Ventanas flotantes con bordes |||||||||||||||||#
+for_window [class="Galculator"] floating enable border normal
+for_window [class="Geany"] floating enable border normal
+for_window [class="GParted"] floating enable border normal
+for_window [class="JDownloader"] floating enable border normal
+for_window [class="Lightdm-gtk-greeter-settings"] floating enable border normal
+for_window [class="Lxappearance"] floating enable border normal
+for_window [class="Mousepad"] floating enable border normal
+for_window [class="Nitrogen"] floating enable border normal
+for_window [class="Pamac-update"] floating enable border normal
+for_window [class="Pavucontrol"] floating enable border normal
+for_window [class="Transmission-gtk"] floatingenable border normal
+for_window [class="(?i)virtualbox"] floating enable border normal
+
+#||||||||||||| Ventanas flotantes sin bordes ||||||||||||||||||#
+for_window [class="Firefox"] enable border pixel 1
+for_window [class="Galculator"] floating enable border pixel 1
+for_window [class="Sonata"] floating enable border pixel 1
+for_window [class="Terminator"] floating enable border pixel 1
+for_window [class="Termite"] floating enable border pixel 1
+for_window [class="Vlc"] floating enable border pixel 1
+for_window [class="xarchiver"] floating enable border pixel 1
+for_window [class="XTerm"] floating enable border pixel 1
+################################################################
+
+#:::::::::: Posicion de ventana en esquina superior :::::::::::#
+################################################################
+bindsym $mod+Shift+p floating enable; resize set 560 px 340 px; sticky enable; move window to position 880 px 25 px
+bindsym $mod+Shift+m floating enable; resize set 1280 px 500 px; sticky enable; move window to position 10 px 390 px
+################################################################
+
+#:::::::::::::::::::::: Config default ::::::::::::::::::::::::#
+################################################################
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym ntilde resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+################################################################
+
+#:::::::::::::::::::::: Config del panel ::::::::::::::::::::::#
+################################################################
+bar {
+	status_command i3blocks -c ~/.config/i3/i3blocks.conf
+	position top
+	tray_output eDP1
+    	height 18
+	font pango:ohsnap, awesome 10
+
+colors {
+		background #505050
+		statusline #16A085
+		separator  #FF008A
+#		background $transparent
+
+
+#::::::::::::::::::::::: Indicadores ::::::::::::::::::::::::::#
+################################################################
+#				    border backgr. text
+		focused_workspace  #121212 #121212 #16A085
+		inactive_workspace #353535 #353535 #fdfdfd
+		urgent_workspace   #000000 #000000 #16a085
+	}
+}
+################################################################
+
+#:::::::::::::::: MARCO DE VENTANA ::::::::::::::::::#
+################################################################
+# class           border  backgr   text  
+client.focused   #101010 #101010 #16a085
+client.unfocused #505050 #505050 #fdfdfd
+client.urgent    #000000 #000000 #fdfdfd
+################################################################
+
+#::::::::::::::::::: Settings for i3-gaps :::::::::::::::::::::#
+################################################################
+# Set inner/outer gaps
+gaps inner 10
+gaps outer -4
+
+# Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
+# gaps inner|outer current|all set|plus|minus <px>
+# gaps inner all set 10
+# gaps outer all plus 5
+
+# Smart gaps (gaps used if only more than one container on the workspace)
+smart_gaps on
+
+# Smart borders (draw borders around container only if it is not the only container on this workspace)
+# on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
+smart_borders on
+
+# Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
+set $mode_gaps Gaps: (o) outer, (i) inner
+set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
+bindsym $mod+Shift+g mode "$mode_gaps"
+
+mode "$mode_gaps" {
+        bindsym o      mode "$mode_gaps_outer"
+        bindsym i      mode "$mode_gaps_inner"
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_inner" {
+        bindsym plus  gaps inner current plus 5
+        bindsym minus gaps inner current minus 5
+        bindsym 0     gaps inner current set 0
+
+        bindsym Shift+plus  gaps inner all plus 5
+        bindsym Shift+minus gaps inner all minus 5
+        bindsym Shift+0     gaps inner all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+mode "$mode_gaps_outer" {
+        bindsym plus  gaps outer current plus 5
+        bindsym minus gaps outer current minus 5
+        bindsym 0     gaps outer current set 0
+
+        bindsym Shift+plus  gaps outer all plus 5
+        bindsym Shift+minus gaps outer all minus 5
+        bindsym Shift+0     gaps outer all set 0
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+################################################################
+
+#:::::::::::::::::::: Salida del sistema ::::::::::::::::::::::#
+################################################################
+set $Locker i3lock && sleep 1
+set $mode_system System:   L :  | S :  | P :  | R :  | E :   
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3lock-fancy, mode "default"
+    bindsym s exec --no-startup-id $Lock systemctl suspend, mode "default
+    bindsym p exec --no-startup-id systemctl poweroff -i, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym e exec --no-startup-id i3-msg exit, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+x mode "$mode_system"
+################################################################
+
+#:::::::::::::::::: Lanzador de aplicaciones ::::::::::::::::::#
+################################################################
+# llamar Web Browser
+bindsym $mod+F1 exec palemoon
+
+# llamar file manager
+bindsym $mod+F2 exec thunar
+
+# llamar Text Editor
+bindsym $mod+F3 exec mousepad
+
+# llamar MOC
+bindsym $mod+F4 exec terminator -e mocp
+
+# llamar gparted
+bindsym $mod+F5 exec gksudo gparted
+
+# llamar lightsm setting
+bindsym $mod+F6 exec gksudo lightdm-gtk-greeter-settings
+
+# llamar lxappearance
+bindsym $mod+F7 exec lxappearance
+
+# llamar volumen control
+bindsym $mod+F8 exec pavucontrol
+
+# llamar chromium
+bindsym $mod+Shift+F1 exec chromium
+
+# llamar editor de imagen gimp
+bindsym $mod+Shift+F8 exec gimp
+
+# llamar weechat
+bindsym Shift+F6 exec terminator -e weechat
+
+# llamar popcorntime
+bindsym $mod+m exec popcorntime
+
+# llamar nitrogen
+bindsym $mod+n exec nitrogen
+
+# llamar screenshoot
+bindsym $mod+p exec xfce4-screenshooter
+
+# llamar ncmpcpp
+bindsym Shift+F4 exec termite -e ncmpcpp visualizer
+
+# Captura de pantalla
+bindsym $mod+Print --release exec "scrot -ue 'mv $f ~/Screenshots'; sleep 1; exec notify-send 'screenshot has been saved to ~/Screenshots'"
+################################################################
+
+#::::::::::::::::::: Aplicaciones al inicio :::::::::::::::::::#
+################################################################
+# WIFI
+#exec --no-startup-id nm-applet
+
+# wallpaper nitrogen
+exec --no-startup-id nitrogen --restore
+#; sleep 1; compton -b
+
+# Transparencia
+exec --no-startup-id compton -cCGb
+
+# Salva panlla
+#exec --no-startup-id xscreensaver -nosplash
+
+# Autobloqueo i3lock-fancy
+exec xautolock -time 10 -locker i3lock-fancy
+
+# Teclado numerico
+exec --no-startup-id numlockx on
+
+# Icono de volumen
+#exec --no-startup-id volumeicon
+
+# Notificador de Actualizaciones 
+exec --no-startup-id aarchup
+
+# Notificador de actualizaciones octopi
+exec octopi-notifier
+
+# Servidor de musica
+exec --no-startup-id mpd
+
+# Oneko
+# exec oneko -rv -tofocus
+
+ exec conky -c ~/.conkyrc
+################################################################
