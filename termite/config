@@ -1,0 +1,60 @@
+[options]
+allow_bold 		= true
+browser 		= chromium
+clickable_url	 	= true
+cursor_blink 		= system
+cursor_shape 		= block
+dynamic_title 		= true
+font 			= Ohsnap 10
+#font 			= DejaVu Sans Mono Terminus (TTF) 9
+geometry 		= 560x302
+highlight 		= #2f2f2f
+mouse_autohide 		= true
+scrollback_lines 	= 10000
+resize_grip		= true
+word_chars 		= -A-Za-z0-9,./?%&#:_=+@~
+
+
+#rgba(23, 19, 17, 0.9)
+
+[colors]
+
+# special
+foreground      = #fdfdfd
+foreground_bold = #fdfdfd
+cursor          = #fdfdfd
+background      = #1b1b1b
+
+# black
+color0  = #000000
+color8  = #0d0d0d
+
+# red
+color1  = #111111
+color9  = #181818
+
+# green
+color2  = #222222
+color10 = #272727
+
+# yellow
+color3  = #333333
+color11 = #393939
+
+# blue
+color4  = #444444
+color12 = #484848
+
+# magenta
+color5  = #555555
+color13 = #595959
+
+# cyan
+color6  = #16a085
+color14 = #05b08f
+
+# white
+color7  = #777777
+color15 = #818181
+
+# vim: ft=dosini cms=#%s
