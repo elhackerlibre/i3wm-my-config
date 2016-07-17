@@ -1,0 +1,138 @@
+[global]
+    
+    alignment = left
+    allow_markup = yes
+    bounce_freq = 0
+    browser = /usr/bin/firefox -new-tab
+    dmenu = /usr/bin/dmenu -p dunst:
+    follow = none
+    #font = Terminus (TTF) 12
+    font = Monospace 8
+    format = "<b>%s</b>\n%b"
+    # geometry [{width}]x{height}][+/-{x}+/-{y}]
+    geometry = "0-12+25"
+    history_length = 20
+    horizontal_padding = 8
+    idle_threshold = 120
+    ignore_newline = no
+    indicate_hidden = yes
+    line_height = 0
+    monitor = 0
+    padding = 8
+    separator_color = frame
+    separator_height = 1
+    show_age_threshold = 60
+    show_indicators = yes
+    shrink = no
+    sort = yes
+    startup_notification = false
+    sticky_history = yes
+    transparency = 0
+    word_wrap = yesshare/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+
+[frame]
+    width = 3
+    color = "#16a085"
+
+[shortcuts]
+
+    # Shortcuts are specified as [modifier+][modifier+]...key
+    # Available modifiers are "ctrl", "mod1" (the alt-key), "mod2",
+    # "mod3" and "mod4" (windows-key).
+    # Xev might be helpful to find names for keys.
+    
+    # Close notification.
+    close = ctrl+space
+    
+    # Close all notifications.
+    close_all = ctrl+shift+space
+    
+    # Redisplay last message(s).
+    # On the US keyboard layout "grave" is normally above TAB and left
+    # of "1".
+    history = ctrl+grave
+    
+    # Context menu.
+    context = ctrl+shift+period
+
+[urgency_low]
+    # IMPORTANT: colors have to be defined in quotation marks.
+    # Otherwise the "#" and following would be interpreted as a comment.
+    background = "#555555"
+    foreground = "#fdfdfd"
+    timeout = 10
+
+[urgency_normal]
+    background = "#000000"
+    foreground = "#fdfdfd"
+    timeout = 10
+
+[urgency_critical]
+    background = "#333333"
+    foreground = "#fdfdfd"
+    timeout = 10
+
+# [i3blocks]
+#    summary = "*"
+#    script = /usr/lib/i3blocks/notify
+
+
+# Every section that isn't one of the above is interpreted as a rules to
+# override settings for certain messages.
+# Messages can be matched by "appname", "summary", "body", "icon", "category",
+# "msg_urgency" and you can override the "timeout", "urgency", "foreground",
+# "background", "new_icon" and "format".
+# Shell-like globbing will get expanded.
+#
+# SCRIPTING
+# You can specify a script that gets run when the rule matches by
+# setting the "script" option.
+# The script will be called as follows:
+#   script appname summary body icon urgency
+# where urgency can be "LOW", "NORMAL" or "CRITICAL".
+# 
+# NOTE: if you don't want a notification to be displayed, set the format
+# to "".
+# NOTE: It might be helpful to run dunst -print in a terminal in order
+# to find fitting options for rules.
+
+
+[fortune]
+   appname = fortune
+   summary = "*signed on*"
+   urgency = low
+
+#[espeak]
+#    summary = "*"
+#    script = dunst_espeak.sh
+
+#[script-test]
+#    summary = "*script*"
+#    script = dunst_test.sh
+
+#[ignore]
+#    # This notification will not be displayed
+#    summary = "foobar"
+#    format = ""
+
+#[signed_on]
+#    appname = Pidgin
+#    summary = "*signed on*"
+#    urgency = low
+#
+#[signed_off]
+#    appname = Pidgin
+#    summary = *signed off*
+#    urgency = low
+#
+#[says]
+#    appname = Pidgin
+#    summary = *says*
+#    urgency = critical
+#
+#[twitter]
+#    appname = Pidgin
+#    summary = *twitter.com*
+#    urgency = normal
+#
+# vim: ft=cfg
