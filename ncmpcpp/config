@@ -1,0 +1,57 @@
+# Configuracion basica
+ncmpcpp_directory = 	"~/.ncmpcpp"
+mpd_music_dir = 	"/home/virus69/Música" 
+mpd_host = 		"localhost"
+mpd_port =		"6600"
+mpd_connection_timeout = 5
+
+# Interfaz:
+user_interface = "alternative"
+alternative_header_first_line_format = 		"$(11)─┤ $b$(13)%a$(end)$/b ├─$(end)"
+alternative_header_second_line_format =		"$(8)%t (%y)$(end)"
+alternative_ui_separator_color = 		"5"
+
+# Formato de canción:
+song_columns_list_format = 			"$L(9)[black]{l} (20)[magenta]{a} (30)[cyan]{b}$R(20)[white]{t}"
+
+# Varias configuraciones:
+autocenter_mode = 	"yes"
+display_bitrate = 	"yes"
+header_visibility = 	"yes"
+statusbar_visibility = 	"yes"
+progressbar_look = 	"◾◾◽"
+
+
+# Visualizador de música:
+visualizer_output_name = 	"FIFO"
+visualizer_in_stereo = 		"no"
+visualizer_fifo_path = 		"/tmp/mpd.fifo"
+visualizer_sync_interval = 	"10"
+visualizer_type = 		"spectrum"
+visualizer_look = 		"▋▋"
+
+# Color:
+discard_colors_if_item_is_selected = 	"yes"
+main_window_color = 			"blue"
+header_window_color = 			"white"
+progressbar_color = 			"cyan"
+statusbar_color = 			"red"
+active_column_color = 			"white"
+volume_color = 				"cyan"
+window_border_color = 			"white"
+active_window_border = 			"white"
+
+# No activos
+song_list_format = 			"{$4%n▕ $9}{$4%a - $9}{$4%t$9}|{$5%f$9}$R{$5▕ %b$9}{$8▕ %l$9}"
+colors_enabled = 			"yes"
+color1 = 				"cyan"
+color2 = 				"black"
+empty_tag_color = 			"white"
+main_window_highlight_color = 		"white"
+state_line_color = 			"white"
+state_flags_color = 			"white"
+#visualizer_color = 			"green"
+
+#progressbar_look = "─░─"
+#progressbar_look = "─⊙╶"
+#progressbar_look = "◾◾◽"
